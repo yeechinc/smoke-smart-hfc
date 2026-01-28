@@ -8,7 +8,7 @@ smart-smoking-areas/
 ├── tests/               # Optional test scripts
 ├── requirements.txt     # Python dependencies, or package.json for Node
 ├── .gitignore
-└── LICENSE (optional) /n
+└── LICENSE (optional)
 
 PROJECT DESCRIPTION
 
