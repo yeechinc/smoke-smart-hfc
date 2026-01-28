@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmokeSmart • Government Dashboard</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="module" src="./app.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" title="SmokeSmart">
+  <img src="./smokesmart-logo.png" alt="SmokeSmart logo" />
+</div>
+
+          <div>
+            <h1>SmokeSmart • Government Dashboard</h1>
+            <p>Decision-support planning for designated smoking areas (Singapore)</p>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="pill" title="Simulated live feed">
+            <span class="dot" id="liveDot"></span>
+            <span id="liveText">Live data: ON</span>
+          </div>
+          <div class="pill">
+            <span>📍</span><span id="locText">Singapore</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="tabs" role="tablist" aria-label="Main tabs">
+        <button class="tab active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
+        <button class="tab" data-tab="heatmap" role="tab" aria-selected="false">Heatmap</button>
+        <button class="tab" data-tab="proposals" role="tab" aria-selected="false">Proposals</button>
+        <button class="tab" data-tab="agent" role="tab" aria-selected="false">AI Agent</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <!-- OVERVIEW -->
+      <section id="tab-overview" class="section">
+        <div class="card">
+          <h2>System snapshot <span class="badge">Auto-updating</span></h2>
+          <p class="sub">
+            Tracks designated smoking areas (DSAs), crowding, air quality hotspots, and protected school zones with a 200m buffer.
+          </p>
+
+          <div class="stat-grid" id="statGrid"></div>
+
+          <div class="footer-note">
+            Demo mode: sample dataset + simulated live updates. Replace with real APIs/WebSockets when ready.
+          </div>
+        </div>
+
+        <div class="grid cols-2">
+          <div class="card">
+            <h2>Planning signals</h2>
+            <p class="sub">
+              Helps identify pressure zones and compliance risk (crowding + AQI + school buffers).
+            </p>
+
+            <div class="split">
+              <div class="stat">
+                <div class="k">Top pressure district</div>
+                <div class="v" id="pressureDistrict">—</div>
+                <div class="hint">Highest combined occupancy + AQI</div>
+              </div>
+              <div class="stat">
+                <div class="k">Worst AQI reading</div>
+                <div class="v" id="worstAQI">—</div>
+                <div class="hint">From sensor points in sample feed</div>
+              </div>
+              <div class="stat">
+                <div class="k">Compliance risk flags</div>
+                <div class="v" id="riskFlags">—</div>
+                <div class="hint">Overcrowded DSAs + near-school proposals</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>⚡ Quick actions</h2>
+            <p class="sub">Common planner tasks.</p>
+
+            <div class="row">
+              <button class="btn primary" id="btnJumpHeatmap">Open Heatmap</button>
+              <button class="btn" id="btnAutoRecommend">Generate AI recommendations</button>
+              <button class="btn danger" id="btnToggleLive">Toggle live updates</button>
+            </div>
+
+            <div class="footer-note" id="quickActionLog">—</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HEATMAP -->
+      <section id="tab-heatmap" class="section hidden">
+        <div class="grid cols-2">
+          <div class="card">
+            <h2>Heatmap & compliance layers</h2>
+            <p class="sub">
+              Density circles show combined crowding + AQI (green/yellow/red). School zones have 200m exclusion buffers.
+            </p>
+
+            <div id="map"></div>
+
+            <div class="footer-note">
+              Tip: click markers and circles for details. Use filters on the right.
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Map controls</h2>
+            <p class="sub">Toggle layers and inspect hotspots.</p>
+
+            <div class="legend">
+              <div class="legend-item">
+                <span>Density low (OK)</span>
+                <span class="swatch" style="background: rgba(34,197,94,.35)"></span>
+              </div>
+              <div class="legend-item">
+                <span>Density medium (Watch)</span>
+                <span class="swatch" style="background: rgba(245,158,11,.35)"></span>
+              </div>
+              <div class="legend-item">
+                <span>Density high (Overcrowded)</span>
+                <span class="swatch" style="background: rgba(239,68,68,.35)"></span>
+              </div>
+              <div class="legend-item">
+                <span>School zone buffer (200m)</span>
+                <span class="swatch" style="background: rgba(239,68,68,.18)"></span>
+              </div>
+            </div>
+
+            <div class="controls">
+              <label class="check">
+                <input type="checkbox" id="toggleDensity" checked />
+                <span>Show density circles</span>
+              </label>
+              <label class="check">
+                <input type="checkbox" id="toggleSchools" checked />
+                <span>Show school buffers (200m)</span>
+              </label>
+              <label class="check">
+                <input type="checkbox" id="toggleExisting" checked />
+                <span>Show existing DSAs (🚬)</span>
+              </label>
+              <label class="check">
+                <input type="checkbox" id="toggleProposals" checked />
+                <span>Show proposals (📍)</span>
+              </label>
+              <label class="check">
+                <input type="checkbox" id="toggleAQI" checked />
+                <span>Show AQI sensors</span>
+              </label>
+            </div>
+
+            <hr class="hr" />
+
+            <h3 class="h3">Hotspots</h3>
+            <div id="hotspotList" class="list"></div>
+
+            <hr class="hr" />
+
+            <h3 class="h3">Coverage gap finder</h3>
+            <p class="sub">Find areas far from existing DSAs (demo heuristic).</p>
+            <button class="btn primary" id="btnFindGaps">Identify coverage gaps</button>
+            <div class="footer-note" id="gapResult">—</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROPOSALS -->
+      <section id="tab-proposals" class="section hidden">
+        <div class="grid cols-2b">
+          <div class="card">
+            <h2>AI-recommended proposals</h2>
+            <p class="sub">
+              Review suitability score, compliance with 200m school buffer, and approve/hold decisions.
+            </p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Proposal</th>
+                  <th>District</th>
+                  <th>Score</th>
+                  <th>School buffer</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="proposalTableBody"></tbody>
+            </table>
+
+            <div class="footer-note" id="proposalHint">Click “Review” to see reasoning.</div>
+          </div>
+
+          <div class="card">
+            <h2>Proposal review</h2>
+            <p class="sub">Decision support: shows compliance checks and reasoning.</p>
+
+            <div class="review-box">
+              <div class="review-title" id="reviewTitle">Select a proposal</div>
+              <div class="review-meta" id="reviewMeta">—</div>
+              <div class="review-body mono" id="reviewBody">—</div>
+            </div>
+
+            <div class="row" style="margin-top:12px;">
+              <button class="btn primary" id="btnApprove" disabled>Approve</button>
+              <button class="btn" id="btnHold" disabled>Mark “Under Review”</button>
+              <button class="btn danger" id="btnReject" disabled>Reject</button>
+            </div>
+
+            <div class="footer-note" id="reviewActionLog">—</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI AGENT -->
+      <section id="tab-agent" class="section hidden">
+        <div class="grid cols-2">
+          <div class="card">
+            <h2>Planning Agent</h2>
+            <p class="sub">
+              Ask for location analysis, AQI recommendations, and coverage gaps. This demo uses rules + your dataset.
+            </p>
+
+            <div class="chat">
+              <div class="chatlog" id="chatLog" aria-live="polite"></div>
+
+              <div class="chatbar">
+                <input id="chatInput" placeholder="Try: “analyze hotspots near schools”, “recommend new locations”, “aqi summary”, “coverage gaps”" />
+                <button class="btn primary" id="chatSend">Send</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Agent tools (demo)</h2>
+            <p class="sub">What the agent “can do” using your data.</p>
+
+            <div class="toolbox">
+              <button class="btn" id="toolAqi">AQI summary</button>
+              <button class="btn" id="toolHotspots">List hotspots</button>
+              <button class="btn" id="toolRecommend">Recommend proposals</button>
+              <button class="btn" id="toolCompliance">Check school compliance</button>
+              <button class="btn" id="toolGaps">Find coverage gaps</button>
+            </div>
+
+            <div class="footer-note">
+              To connect to a real AI model: replace <span class="mono">agentRespond()</span> in <span class="mono">app.js</span> with an API call.
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="wrap" style="padding-top:0; padding-bottom:26px;">
+    <div class="footer-note">
+      SmokeSmart prototype • demo-only • no personal data stored in this static build.
+    </div>
+  </footer>
+</body>
+</html>
