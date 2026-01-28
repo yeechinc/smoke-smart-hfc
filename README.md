@@ -34,9 +34,9 @@ Do not open index.html directly using file:// as JavaScript modules may not load
 ## **Usage Guide**
 - Explore the Map Interface
 - View simulated heatmaps showing smoking hotspots, foot traffic, and complaint density.
-- Identify areas that are overcrowded, underused, or at risk of spillover into public spaces.
+- Identify areas that are overcrowded, underused, or at risk of smoke spillover into public spaces.
 - Interact with the Agentic AI Chatbot
-- Use the chatbot to ask planning-related questions such as: “Where are smoking complaints clustering?”, “Which smoking areas are overcrowded?”
+- Use the chatbot to ask planning-related questions such as: “Where are smoking complaints clustering?”, “Which smoking areas are overcrowded?”, “Where could we relocate a smoking area to reduce public exposure?”
 - Review Automated Recommendations
 
 The AI demonstrates how it would analyse patterns over time and generate policy-aligned recommendations. This showcases an agentic workflow, where the AI goes beyond answering questions to suggesting actions.
