@@ -20,9 +20,9 @@ DEPLOYMENT INSTRUCTIONS
 
 CONTRIBUTORS  
 Chen Yun Xin Aliz  
-Chen Yee Chin
-Esther Loh Xin Qi
-Khaw Zi Xiang Stuart
+Chen Yee Chin  
+Esther Loh Xin Qi  
+Khaw Zi Xiang Stuart  
 Ho Xin Yi Naomi
 
 ADDITIONAL NOTES
