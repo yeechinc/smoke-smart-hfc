@@ -1,5 +1,5 @@
 # smoke-smart-hfc
-##SmokeSmart
+**SmokeSmart**
 
 An Agentic AI System for Optimising Designated Smoking Areas in Singapore
 
