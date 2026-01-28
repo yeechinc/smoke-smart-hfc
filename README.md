@@ -62,10 +62,10 @@ Future Improvements:
 - Stronger governance and explainability layers for Agentic AI
 
 ## **Project Contributors**
-Chen Yun Xin Aliz
-Chen Yee Chin
-Esther Loh Xin Qi
-Khaw Zi Xiang Stuart
+Chen Yun Xin Aliz,
+Chen Yee Chin,
+Esther Loh Xin Qi,
+Khaw Zi Xiang Stuart,
 Ho Xin Yi Naomi
 
 Team Name: INSAYNE
