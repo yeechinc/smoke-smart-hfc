@@ -15,26 +15,35 @@ This prototype was developed for Hack for Cities 2026 to demonstrate concept fea
 
 #**Setup Instructions**
 
-### Requirements
-- A modern web browser (Chrome / Edge / Firefox)
-- A local HTTP server (recommended)
+Requirements
 
-### Steps
-1. Clone or download this repository:
-   ```bash
-   git clone https://github.com/<your-username>/<your-repo-name>.git
-Open the project folder in VS Code
+A modern web browser (Chrome, Edge, or Firefox)
+
+A local HTTP server (recommended)
+
+Steps
+
+Clone or download the repository:
+
+git clone https://github.com/<your-username>/<your-repo-name>.git
+
+
+Open the project folder in Visual Studio Code
 
 Run a local server
-Recommended: VS Code Live Server extension
+Recommended method: VS Code Live Server extension
 
 Right-click index.html
 
 Select “Open with Live Server”
 
-The application will open in the browser at:  
+The application will open in the browser at:
 
-The interface will load locally in your browser.
+http://127.0.0.1:5500/index.html
+
+
+⚠️ Important:
+Do not open index.html directly using file:// as JavaScript modules may not load correctly.
 
 #Usage Guide
 
