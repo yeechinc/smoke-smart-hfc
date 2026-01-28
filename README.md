@@ -11,7 +11,7 @@ smart-smoking-areas/
 └── LICENSE (optional)
 
 **PROJECT DESCRIPTION**  
-Team INSAYNE noticed that designated smoking areas in Singapore are often poorly placed or overcrowded, failing to reflect real-world smoking behaviour and leading to continued non-compliant smoking and second-hand smoke exposure. Our response was to introduce SmartSmoke, an Agentic AI - powered autonomous system capable at analysing real-time usage, air quality, and crowd data to score existing smoking areas and recommend where to add, remove, or relocate them. This enables data-driven, adaptive planning that reduces smoke exposure while maintaining regulatory oversight in Singapore.
+Team INSAYNE noticed that designated smoking areas in Singapore are often poorly placed or overcrowded, failing to reflect real-world smoking behaviour and leading to continued non-compliant smoking and second-hand smoke exposure. Our response was to introduce SmartSmoke, an Agentic AI - powered autonomous system capable at analysing real-time usage, air quality, and crowd data to score existing smoking areas and recommend where to add, remove, or relocate them. This enables data-driven, adaptive planning that reduces smoke exposure while maintaining regulatory oversight in Singapore.  
 **SETUP INSTRUCTIONS**
 
 **USAGE GUIDE**
