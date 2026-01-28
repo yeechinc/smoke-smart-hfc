@@ -1,8 +1,8 @@
-## SmokeSmart
+# SmokeSmart
 **An Agentic AI System for Optimising Designated Smoking Areas in Singapore**
 
 
-**Project Description**  
+## **Project Description**  
 SmokeSmart is a web-based prototype demonstrating how Agentic AI can support governments and urban planners in reducing second-hand smoke exposure in public spaces.
 
 Despite strict smoking regulations, smoke exposure remains common due to static and poorly placed designated smoking areas (DSAs). SmokeSmart reframes the problem from individual behaviour to infrastructure design.
