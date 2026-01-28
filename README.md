@@ -1,17 +1,16 @@
 # smoke-smart-hfc
-A platform to help users find designated smoking areas and avoid smoke exposure in urban spaces. By combining real-time location data and an intuitive map interface, the solution improves public health awareness, encourages responsible smoking behavior, and makes urban spaces more comfortable for everyone.
-smart-smoking-areas/
-│
-├── README.md            # Required
-├── src/                 # Your code (frontend/backend)
-├── docs/                # Screenshots, diagrams, notes
-├── tests/               # Optional test scripts
-├── requirements.txt     # Python dependencies, or package.json for Node
-├── .gitignore
-└── LICENSE (optional)
+SmokeSmart
+
+An Agentic AI System for Optimising Designated Smoking Areas in Singapore
 
 **PROJECT DESCRIPTION**  
-Team INSAYNE noticed that designated smoking areas in Singapore are often poorly placed or overcrowded, failing to reflect real-world smoking behaviour and leading to continued non-compliant smoking and second-hand smoke exposure. Our response was to introduce SmartSmoke, an Agentic AI - powered autonomous system capable at analysing real-time usage, air quality, and crowd data to score existing smoking areas and recommend where to add, remove, or relocate them. This enables data-driven, adaptive planning that reduces smoke exposure while maintaining regulatory oversight in Singapore.  
+SmokeSmart is a web-based prototype demonstrating how Agentic AI can support governments and urban planners in reducing second-hand smoke exposure in public spaces.
+
+Despite strict smoking regulations, smoke exposure remains common due to static and poorly placed designated smoking areas (DSAs). SmokeSmart reframes the problem from individual behaviour to infrastructure design.
+
+The prototype visualises where smoking occurs, highlights overcrowded or underused areas, and showcases how an Agentic AI assistant can analyse patterns and recommend where smoking areas should be added, relocated, or removed, while remaining aligned with NEA policies.
+
+This prototype was developed for Hack for Cities 2026 to demonstrate concept feasibility and user interaction.
 **SETUP INSTRUCTIONS**
 
 **USAGE GUIDE**
