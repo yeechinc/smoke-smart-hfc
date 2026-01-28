@@ -19,7 +19,7 @@ Requirements:
 - A local HTTP server (recommended)
 
 Steps:
-1. Clone or download the repository: git clone https://github.com/<your-username>/<your-repo-name>.git
+1. Clone or download the repository: git clone https://github.com/<your-username>/<your-repo-name>.git. Alternatively, run https://github.dev/yeechinc/smoke-smart-hfc on browser.
 2. Open the project folder in Visual Studio Code
 3. Run a local server
 4. Recommended method: VS Code Live Server extension
