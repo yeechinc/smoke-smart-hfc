@@ -12,4 +12,19 @@ smart-smoking-areas/
 
 PROJECT DESCRIPTION
 
+SETUP INSTRUCTIONS
+
+USAGE GUIDE
+
+DEPLOYMENT INSTRUCTIONS
+
+CONTRIBUTORS
+Chen Yun Xin Aliz
+Chen Yee Chin
+Esther Loh Xin Qi
+Khaw Zi Xiang Stuart
+Ho Xin Yi Naomi
+
+ADDITIONAL NOTES
+
 
