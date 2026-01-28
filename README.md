@@ -10,13 +10,13 @@ smart-smoking-areas/
 ├── .gitignore
 └── LICENSE (optional)
 
-PROJECT DESCRIPTION
+**PROJECT DESCRIPTION**
 
-SETUP INSTRUCTIONS
+**SETUP INSTRUCTIONS**
 
-USAGE GUIDE
+**USAGE GUIDE**
 
-DEPLOYMENT INSTRUCTIONS
+**DEPLOYMENT INSTRUCTIONS**
 
 **CONTRIBUTORS**  
 Chen Yun Xin Aliz  
@@ -25,6 +25,6 @@ Esther Loh Xin Qi
 Khaw Zi Xiang Stuart  
 Ho Xin Yi Naomi
 
-ADDITIONAL NOTES
+**ADDITIONAL NOTES**
 
 
