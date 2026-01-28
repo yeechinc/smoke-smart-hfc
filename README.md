@@ -12,15 +12,7 @@ The prototype visualises where smoking occurs, highlights overcrowded or underus
 This prototype was developed for Hack for Cities 2026 to demonstrate concept feasibility and user interaction.
 
 
-#**Setup Instructions**
-Requirements:
-
-- A modern web browser (Chrome, Edge, Firefox, Safari)
-
-- No external dependencies required
-
-
-#**Setup Instructions**
+## **Setup Instructions**
 
 Requirements:
 - A modern web browser (Chrome, Edge, or Firefox)
@@ -38,7 +30,8 @@ Steps:
 ⚠️ Important:
 Do not open index.html directly using file:// as JavaScript modules may not load correctly.
 
-**Usage Guide**
+
+## **Usage Guide**
 - Explore the Map Interface
 - View simulated heatmaps showing smoking hotspots, foot traffic, and complaint density.
 - Identify areas that are overcrowded, underused, or at risk of spillover into public spaces.
@@ -48,16 +41,15 @@ Do not open index.html directly using file:// as JavaScript modules may not load
 
 The AI demonstrates how it would analyse patterns over time and generate policy-aligned recommendations. This showcases an agentic workflow, where the AI goes beyond answering questions to suggesting actions.
 
-**Deployment Notes**
-
+## **Deployment Notes**
 This repository contains a static prototype intended for demonstration and evaluation purposes.
 
-- In a real-world deployment, SmokeSmart could be:
+In a real-world deployment, SmokeSmart could be:
  1. Integrated with live datasets from public agencies
  2. Connected to real-time sensors and anonymised mobility data
  3. Deployed as a secure web application for government use
 
-**Additional Notes**
+## **Additional Notes**
 Limitations:
 - Data shown in the prototype is simulated or static
 - Recommendations are illustrative, not operational
@@ -69,7 +61,7 @@ Future Improvements:
 - District-level pilots and impact evaluation
 - Stronger governance and explainability layers for Agentic AI
 
-**Project Contributors**
+## **Project Contributors**
 Chen Yun Xin Aliz
 Chen Yee Chin
 Esther Loh Xin Qi
