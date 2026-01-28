@@ -18,7 +18,7 @@ USAGE GUIDE
 
 DEPLOYMENT INSTRUCTIONS
 
-**CONTRIBUTORS** 
+**CONTRIBUTORS**  
 Chen Yun Xin Aliz  
 Chen Yee Chin  
 Esther Loh Xin Qi  
