@@ -15,23 +15,24 @@ This prototype was developed for Hack for Cities 2026 to demonstrate concept fea
 
 #**Setup Instructions**
 
-Requirements
+### Requirements
+- A modern web browser (Chrome / Edge / Firefox)
+- A local HTTP server (recommended)
 
-A modern web browser (Chrome, Edge, Firefox, Safari)
+### Steps
+1. Clone or download this repository:
+   ```bash
+   git clone https://github.com/<your-username>/<your-repo-name>.git
+Open the project folder in VS Code
 
-No external dependencies required
+Run a local server
+Recommended: VS Code Live Server extension
 
-Running the Prototype
+Right-click index.html
 
-Clone or download this repository:
+Select “Open with Live Server”
 
-git clone https://github.com/your-org/smokesmart.git
-
-
-Open the prototype file directly:
-
-smokesmart-system.html
-
+The application will open in the browser at:  
 
 The interface will load locally in your browser.
 
