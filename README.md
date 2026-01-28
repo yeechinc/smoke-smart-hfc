@@ -18,8 +18,8 @@ USAGE GUIDE
 
 DEPLOYMENT INSTRUCTIONS
 
-CONTRIBUTORS /n
-Chen Yun Xin Aliz
+CONTRIBUTORS  
+Chen Yun Xin Aliz  
 Chen Yee Chin
 Esther Loh Xin Qi
 Khaw Zi Xiang Stuart
